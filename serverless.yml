@@ -1,0 +1,16 @@
+service: hello-world-service
+
+# Use the serverless framework's default Node.js runtime
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1 # You can change this to your preferred AWS region
+
+# Define the functions in your service
+functions:
+  helloWorld:
+    handler: handler.helloWorld
+    events:
+      - http:
+          path: hello
+          method: get
